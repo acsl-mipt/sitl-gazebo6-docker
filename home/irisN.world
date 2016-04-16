@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="default">
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <!-- A ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://irisN</uri>
+      <pose>0 0 0 0 0 0</pose>
+      <name>iris1</name>
+    </include>
+    <include>
+      <uri>model://irisN</uri>
+      <pose>5 0 0 0 0 0</pose>
+      <name>iris2</name>
+    </include>
+    <include>
+      <uri>model://irisN</uri>
+      <pose>0 5 0 0 0 0</pose>
+      <name>iris3</name>
+    </include>
+  </world>
+</sdf>
