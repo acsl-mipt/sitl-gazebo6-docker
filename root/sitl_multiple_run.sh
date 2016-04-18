@@ -35,7 +35,7 @@ while [ $n -le $sitl_num ]; do
 
  cd $n
 
- sudo -b -u $USER ../mainapp -d rcS >out.log 2>err.log
+ ../mainapp -d rcS >out.log 2>err.log
 
  cd ../
 

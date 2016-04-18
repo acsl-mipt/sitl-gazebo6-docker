@@ -1,17 +1,15 @@
-set -e
-
-cp /vagrant/sources.list /etc/apt/sources.list
+cp /root/sources.list /etc/apt/sources.list
 
 #gazebo
 
-apt-get update || true
+apt-get update
 apt-get install wget -y
 
 echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list
 wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 
-apt-get update || true
-apt-get install gazebo6 libgazebo6-dev gazebo6-plugin-base libgazebo6 -y
+apt-get update
+apt-get install gazebo6 libgazebo6-dev -y
 
 #sitl_gazebo
 
