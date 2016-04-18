@@ -4,9 +4,9 @@ COPY root /root/
 COPY sources.list /root/sources.list
 COPY install_deps.sh /root/install_deps.sh
 
-RUN cd /root/ && chmod +x *.sh && sleep 1 && ./install_deps.sh
+RUN cd /root && chmod +x *.sh && sleep 1 && ./install_deps.sh
 
-RUN git clone --depth 1 -b stable_multiple_sitl https://github.com/acsl-mipt/Firmware \
+RUN cd /root && git clone --depth 1 -b stable_multiple_sitl https://github.com/acsl-mipt/Firmware \
   && cd Firmware && make posix_sitl_default
 
 RUN cd /root && git clone --depth 1 -b multiple_sitl https://github.com/acsl-mipt/sitl_gazebo sitl_gazebo_src \

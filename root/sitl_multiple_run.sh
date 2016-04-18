@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Starting sitl_multiple_run $*"
+
 sitl_num=$1
 
 sim_port=15019
@@ -35,7 +37,8 @@ while [ $n -le $sitl_num ]; do
 
  cd $n
 
- ../mainapp -d rcS >out.log 2>err.log
+ echo "Starting mainapp $n"
+ ../mainapp -d rcS >out.log 2>err.log &
 
  cd ../
 
